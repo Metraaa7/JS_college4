@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 5px 10px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .task {
+            margin-bottom: 40px;
+        }
+        button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="task">
+        <h1 class="task-title">Task #1</h1>
+        <h2>Метод click флажка</h2>
+        <form name="test">
+            Флажок <input type="checkbox" name="ch" id="ch"><br>Состояние флажка можно изменить и этой кнопкой
+            <input type="button" value="Cмена состояния" class="change">
+        </form>
+    </div>
+
+    <div class="task">
+        <h1 class="task-title">Task #2</h1>
+        <h2>Метод click групи перемикачів</h2>
+        <form name="test1">
+            <input type="radio" name="sex" value="man" checked>Male
+            <input type="radio" name="sex" value="woman">Female
+            <br>Стан перемикачів можна змінити цією кнопкою
+            <input type="button" value="Зміна стану" class="changeSex"> 
+        </form>
+    </div>
+
+    <div class="task">
+        <h1 class="task-title">Task #3</h1>
+        <h2>Робота с готовим списком</h2>
+        <form name="test2">
+            <select name="item" size="5">
+                <option value="tea" selected>Tea
+                <option value="coffee">Coffee
+                <option value="milk">Milk
+                <option value="cacao">Cacao
+                <option value="juice">Juice
+            </select>
+            <input type="button" value="Нехай кава" onclick="test2.item.options[1].selected=true;">
+            <input type="button" value="Подивимось" onclick="btnClick2()">
+        </form>
+    </div>
+
+    <div class="task">
+        <h1 class="task-title">Task #4</h1>
+        <h2>Динамічне заповнення списку</h2>
+        <form name="sel">
+            <select name="listOfLinks"></select>
+            <input type="button" value="Redirect" onclick="window.location.href=document.links[sel.listOfLinks.selectedIndex]">
+        </form>
+        <a href="https://rozetka.com.ua/"></a>
+        <a href="https://allo.ua/ru/"></a>
+        <a href="https://www.olx.ua/uk/"></a>
+        <a href="https://www.zieit.edu.ua/"></a>
+    </div>
+
+    <div class="task">
+        <h1 class="task-title">Task #5</h1>
+        <h2>Заповніть анкету</h2>
+        <form name="sel1">
+            <table>
+                <tr><td><b>Прізвище:</b></td>
+                <td><input name="family" size="20"
+                onblur="this.value=this.value.toUpperCase()"></td></tr>
+                <tr><td><b>Ім'я:</b></td>
+                <td><input name="name" size="20"
+                onblur="this.value=this.value.toUpperCase()"></td></tr>
+                <tr><td><b>Вік:</b></td>
+                <td><input name="age" size="3" 
+                onblur="this.value=CheckAge(this.value)"
+                onfocus="this.select()"></td></tr>
+                <tr><td><b>Телефон:</b></td>
+                <td><input name="phone" size="10"></td></tr>
+            </table>
+            <input type="button" value="Ok" onclick="Complete();">
+            <input type="reset" value="Cancel">
+        </form>
+
+    </div>
+    <script src="script.js"></script>
+</head>
+<body>
+</html>
